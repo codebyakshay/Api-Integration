@@ -12,10 +12,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm-run-all -p install-backend start-frontend start-backend",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "install-backend": "cd backend && npm install",
+    "start-frontend": "react-scripts start",
+    "start-backend": "cd backend && node server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +38,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3000"
+  "proxy": "http://localhost:3000",
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "npm-run-all": "^4.1.5"
+  }
 }
