@@ -23,7 +23,7 @@ const EditUserForm = ({
       <div>
         <label>Password:</label>
         <input
-          type="password"
+          type="text"
           value={tempPassword}
           onChange={(e) => setTempPassword(e.target.value)}
           required
